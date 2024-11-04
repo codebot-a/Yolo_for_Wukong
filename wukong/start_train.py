@@ -2,22 +2,23 @@
 import time
 from ultralytics import YOLO
 
+if __name__ == '__main__':
 
-
-model = YOLO('yolov8l.pt')  # load a pretrained model (recommended for training)
-results = model.train(
-    data='A_my_data.yaml', 
-    epochs=200, 
-    imgsz=640, 
-    device=[0], 
-    workers=0, 
-    batch=32, 
-    cache=True,
-    save_period=10,
-    project='D:/AI/yolo8/training_output',  # 自定义项目路径
-    name='wukong2'  # 自定义训练名称
-)
-time.sleep(10) # 睡眠10s，主要是用于服务器多次训练的过程中使用
+    model = YOLO('yolov8l.pt')  # load a pretrained model (recommended for training)
+    results = model.train(
+        data='./yolo_wukong/wukong/my_train.yaml', 
+        epochs=200, 
+        imgsz=640, 
+        val=True,
+        device=[0], 
+        workers=0, 
+        batch=32, 
+        cache=True,
+        save_period=10,
+        project='./yolo_wukong/training_output',  # 自定义项目路径
+        name='wukong'  # 自定义训练名称
+    )
+    # time.sleep(10) # 睡眠10s，主要是用于服务器多次训练的过程中使用
 
 
 """

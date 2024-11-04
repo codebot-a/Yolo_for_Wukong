@@ -1,0 +1,14 @@
+# custom_data.yaml
+train: /AI_selfLearning/wukong_train_data/images/train  # Path to the folder containing training images
+val: /AI_selfLearning/wukong_train_data/images/val      # Path to the folder containing validation images
+
+# Specify labels directory explicitly (optional, but recommended for consistency)
+train_labels: /AI_selfLearning/wukong_train_data/labels/train
+val_labels: /AI_selfLearning/wukong_train_data/labels/val
+
+# Number of classes
+nc: 17
+
+# Class names
+names: ['0', '1', '2', '3', '4', '5', '6' ,'7', '8' ,
+      '9', '10', '11', '12', '13', '14', '15', '16']
